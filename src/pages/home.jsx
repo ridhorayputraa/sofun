@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 import WhatsappImage from "/assets/images/whatsap-bg.png";
 
 function Home() {
-  const [kebutuhan, setKebutuhan] = useState("izin_tidak_hadir");
   const [namaDosen, setNamaDosen] = useState("[Nama Dosen]");
   const [namaMahasiswa, setNamaMahasiswa] = useState("[Nama Mahasiswa]");
   const [nimMahasiswa, setNimMahasiswa] = useState("[NIM]");
@@ -13,10 +12,13 @@ function Home() {
   const [tanggal, setTanggal] = useState("[Tanggal]");
   const [alasan, setAlasan] = useState("[Alasan]");
 
-  function btnKebutuhan(params_kebutuhan) {
-    setKebutuhan(params_kebutuhan);
-  }
+  const kebutuhanList = [
+    { id: "izin_tidak_hadir", label: "Izin Tidak Hadir" },
+    { id: "izin_bertemu", label: "Izin Bertemu" },
+  ];
+  const [kebutuhan, setKebutuhan] = useState(kebutuhanList[0].id);
 
+  console.log(kebutuhan);
   function copyToClipboard() {
     let textToCopy = "";
 
@@ -147,24 +149,22 @@ function Home() {
                 </div>
 
                 <div className="flex gap-3 mb-4">
-                  <div className="cta w-full">
-                    <button
-                      onClick={() => btnKebutuhan("izin_tidak_hadir")}
-                      type="button"
-                      className="w-full bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-b-0 hover:border-green-500 rounded"
-                    >
-                      Izin Tidak Hadir
-                    </button>
-                  </div>
-                  <div className="cta w-full">
-                    <button
-                      onClick={() => btnKebutuhan("izin_bertemu")}
-                      type="button"
-                      className="w-full bg-purple-500 hover:bg-purple-400 text-white font-bold py-2 px-4 border-b-4 border-purple-700 hover:border-b-0 hover:border-purple-500 rounded"
-                    >
-                      Izin Bertemu
-                    </button>
-                  </div>
+                  {kebutuhanList.map((item, index) => (
+                    <div className="cta w-full">
+                      <button
+                        key={index}
+                        onClick={() => setKebutuhan(item.id)}
+                        type="button"
+                        className={`${
+                          kebutuhan === item.id
+                            ? "bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-b-0 hover:border-green-500 rounded w-full"
+                            : "bg-gray-500 opacity-70 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-b-0 hover:border-gray-500 rounded w-full"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="form-group mb-4">
