@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* --primary-gd: transparent linear-gradient(140deg, #384967 0%, #6f91cd 100%) 0% 0% no-repeat padding-box; */
+  --c-primary: #a831fa;
+  --c-secondary: #75e7f8;
+  --c-body: #171717;
+  --c-text: rgb(255, 255, 255);
+  --c-black: #212529;
+  --c-info: #9597a1;
+  --c-red: #d0342c;
+  --c-white: #ffffff;
+  --c-grey: #d1d1d1;
+  --c-disabled: #dee1e8;
+  --c-transparent: transparent;
+  --c-skeleton: #75e7f834;
+  --shadow-bg: 0px 6px 18px rgb(0 0 0 / 8%);
+  --shadow-skeleton: 0px 6px 18px rgb(0 0 0 / 3%);
+  --ts-cubic: all 0.5s cubic-bezier(0.47, 0.71, 0.66, 0.84);
+  --c-black: #000000;
+  --btn-background: #09041e;
+  --btn-shadow: rgba(33, 4, 104, 0.2);
+  --btn-shine-left: rgba(168, 49, 250, 0.5);
+  --btn-shine-right: rgba(117, 231, 248, 0.65);
+  --glow-start: #a831fa;
+  --glow-end: #75e7f8;
+}
+
+html,
+header,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: var(--c-text);
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999999999999999999;
+}
+
+header,
+footer {
+  background-color: var(--c-black);
+}
+
+/*====================================== SECTION NAVBAR ======================================*/
+
+.container-nav {
+  padding: 1rem 0.5rem;
+}
+
+.menu-nav .nav-content {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.menu-nav .nav-content.active,
+.menu-nav .nav-content:hover {
+  background-color: var(--c-white);
+  color: var(--c-black);
+}
+
+/*====================================== SECTION COMPONENT WORDING ======================================*/
+
+.box-shadow {
+  -webkit-transition: box-shadow 0.5s ease-out;
+  box-shadow: 0 8px 18px 0 rgba(0, 0, 0, 0.18);
+  transition: box-shadow 0.5s ease-out;
+}
+
+.no-pad {
+  padding: 0;
+}
+
+.rd-sm {
+  border-radius: 0.25rem;
+}
+
+.rd-md {
+  border-radius: 0.5rem;
+}
+
+.rd-lg {
+  border-radius: 0.75rem;
+}
+
+.rd-h {
+  border-radius: 1.5rem;
+}
+
+.rd-50 {
+  border-radius: 50%;
+}
+
+.rd-t-sm {
+  border-radius: 0.25rem 0.25rem 0rem 0rem;
+}
+
+.rd-t-md {
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.rd-t-lg {
+  border-radius: 0.75rem 0.75rem 0rem 0rem;
+}
+
+.rd-t-h {
+  border-radius: 1.5rem 1.5rem 0rem 0rem;
+}
+
+.rd-b-sm {
+  border-radius: 0rem 0rem 0.25rem 0.25rem;
+}
+
+.rd-b-md {
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+}
+
+.rd-b-lg {
+  border-radius: 0rem 0rem 0.75rem 0.75rem;
+}
+
+.rd-b-h {
+  border-radius: 0rem 0rem 1.25rem 1.25rem;
+}
+
+.no-transform {
+  text-transform: none !important;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.h-fit {
+  height: fit-content;
+}
+
+.max-16 {
+  max-width: 1rem !important;
+}
+
+.max-24 {
+  max-width: 1.5rem !important;
+}
+
+.max-32 {
+  max-width: 2rem !important;
+}
+
+.max-40 {
+  max-width: 2.5rem !important;
+}
+
+.max-48 {
+  max-width: 3rem !important;
+}
+
+.max-64 {
+  max-width: 4rem !important;
+}
+
+.max-84 {
+  max-width: 5.25rem !important;
+}
+
+.max-100 {
+  max-width: 6.25rem !important;
+}
+
+.max-128 {
+  max-width: 8rem !important;
+}
+
+.max-160 {
+  max-width: 10rem !important;
+}
+
+.max-240 {
+  max-width: 15rem !important;
+}
+
+.max-320 {
+  max-width: 20rem !important;
+}
+
+.max-360 {
+  max-width: 22.5rem !important;
+}
+
+.max-400 {
+  max-width: 25rem !important;
+}
+
+.max-480 {
+  max-width: 30rem !important;
+}
+
+.max-640 {
+  max-width: 40rem !important;
+}
+
+.max-720 {
+  max-width: 45rem !important;
+}
+
+.max-840 {
+  max-width: 52.5rem !important;
+}
+
+.max-1024 {
+  max-width: 64rem !important;
+}
+
+.max-1140 {
+  max-width: 71.25rem !important;
+}
+
+.z-m-3 {
+  z-index: -3;
+}
+
+.z-m-2 {
+  z-index: -2;
+}
+
+.z-m-1 {
+  z-index: -1;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+.z-3 {
+  z-index: 3;
+}
+
+.z-4 {
+  z-index: 4;
+}
+
+.z-5 {
+  z-index: 5;
+}
+
+.subject-title {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.subject-desc,
+.subject-info {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+/*====================================== SECTION HOME PAGE ======================================*/
+section {
+  padding: 4rem 0;
+  margin: 0 auto;
+}
+
+input {
+  background: transparent;
+  color: white;
+}
+
+.form-wrapper {
+  overflow: auto;
+  max-height: 40rem;
+  padding: 1rem;
+}
+
+.text-card {
+  width: 100%; 
+  height: 100%;
+  max-height: 33rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.text-card p {
+  text-wrap: wrap;
+  text-wrap-mode: wrap;
+}
